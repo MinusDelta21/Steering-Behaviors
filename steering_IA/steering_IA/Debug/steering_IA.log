@@ -1,0 +1,9 @@
+﻿  Boid.cpp
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\documents\idv\6 cuatrimestre\steering_ia\steering_ia\boid.cpp(42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  steering_IA.vcxproj -> C:\Users\Santiago\Documents\IDV\6 Cuatrimestre\steering_IA\Debug\steering_IA.exe
+  steering_IA.vcxproj -> C:\Users\Santiago\Documents\IDV\6 Cuatrimestre\steering_IA\Debug\steering_IA.pdb (Full PDB)
