@@ -132,7 +132,13 @@ Vector3 Boid::separation(vector<Boid*>& boidList)
 
 Vector3 Boid::flock(vector<Boid*>& boidList)
 {
-	return Vector3();
+	Vector3 flockForce;
+	flockForce = this->directionAvg(boidList) + this->cohesion(boidList) + this->separation(boidList);
+	return flockForce;
+}
+Vector3 Boid::followLeader(vector<Boid*>&boidList) {
+	Vector3 followForce;
+	followForce = this->flock(boidList) + flee(this->m_position.x, this->m_position.y);
 }
 
 

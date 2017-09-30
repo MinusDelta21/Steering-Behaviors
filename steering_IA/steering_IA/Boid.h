@@ -22,6 +22,7 @@ public:
 	Vector3 cohesion(vector<Boid*>&boidList);
 	Vector3 separation(vector<Boid*>&boidList);
 	Vector3 flock(vector<Boid*>&boidList);
+	Vector3 followLeader(vector<Boid*>&boidList);
 	void initialize();
 	void update();
 	void render();
