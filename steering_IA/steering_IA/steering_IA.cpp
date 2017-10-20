@@ -2,10 +2,12 @@
 //
 
 #include "stdafx.h"
-
+#include "App.h"
 
 int main()
 {
-    return 0;
+	Application myApp;
+	myApp.initialize();
+    return myApp.run();
 }
 

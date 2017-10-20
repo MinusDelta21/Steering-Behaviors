@@ -14,6 +14,12 @@ void GameObject::destroy() {
 
 }
 
+void GameObject::setPosition(unsigned short x, unsigned short y)
+{
+	m_position.x = x;
+	m_position.y = y;
+}
+
 GameObject::GameObject()
 {
 }

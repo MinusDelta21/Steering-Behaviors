@@ -62,7 +62,7 @@ Vector3 Boid::followPath(const vector<Vector3>&nodes, int index) {
 				Vector3 B = Vector3(nodes[index + 1].x, nodes[index + 1].y, nodes[index + 1].z) - Vector3(nodes[index].x, nodes[index].y, nodes[index].z);
 			else 
 				Vector3 B = Vector3(nodes[0].x, nodes[0].y, nodes[0].z) - Vector3(nodes[index].x, nodes[index].y, nodes[index].z);
-			float esc = A.dot(A, B);
+			float esc = A.dot(B);
 			Vector3 C = B*esc;
 			Vector3 D = B - m_position;
 			Vector3 E = A - B;
@@ -104,7 +104,7 @@ Vector3 Boid::directionAvg(vector<Boid*>& boidList)
 	for (int i = 0; i < boidList.size(); ++i) {
 		dirAvg =dirAvg + boidList[i]->m_direction;
 	}
-	return  (dirAvg / boidList.size()).normalized;
+	return  (dirAvg / boidList.size()).normalized();
 }
 
 Vector3 Boid::cohesion(vector<Boid*>& boidList)
@@ -139,6 +139,7 @@ Vector3 Boid::flock(vector<Boid*>& boidList)
 Vector3 Boid::followLeader(vector<Boid*>&boidList) {
 	Vector3 followForce;
 	followForce = this->flock(boidList) + flee(this->m_position.x, this->m_position.y);
+	return (0, 0, 0);
 }
 
 
