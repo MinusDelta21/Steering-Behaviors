@@ -3,23 +3,24 @@
 #include "MainMenu.h"
 #include <vector>
 #include <SFML\Graphics.hpp>
+#include "StateMachine.h"
 using std::vector;
 using sf::RenderWindow;
 using sf::Event;
 using sf::Mouse;
+class StateMachine;
+class Window;
 class Application
 {
 	Window m_applicationWnd;
-	vector<Window*>m_windows;
-	Window * m_activeWindow;
+	StateMachine m_FSM;
 	bool onInput(Event& _event);
 public:
 	void initialize();
 	void update();
-	void render(RenderWindow&window);
+	void render();
 	void destroy();
 	int run();
-	void setWindow(unsigned short index);
 	Application();
 	~Application();
 };

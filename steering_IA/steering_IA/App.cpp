@@ -1,29 +1,20 @@
 #include "stdafx.h"
 #include "App.h"
-
+#include "GameWindow.h"
 
 
 void Application::initialize() {
-	m_applicationWnd.initialize(1200, 720, "MainWindow");
-	
-	MainMenu* Lobby = new MainMenu();
-	Lobby->initialize();
-	m_windows.push_back(Lobby);
-	setWindow(0);
+	m_applicationWnd.initialize(1920, 1080, "Capture The Flag");
+	m_FSM.AddState(reinterpret_cast<State*>(new GameWindow(SCENE_STATES::Game, "Options Scene", this),true));
 }
 void Application::update() {
 	m_applicationWnd.update();
-	m_activeWindow->update();
 }
-void Application::render(RenderWindow&window) {
+void Application::render() {
 	m_applicationWnd.clear();
-	m_activeWindow->render(m_applicationWnd.m_window);
-	m_applicationWnd.render(m_applicationWnd.m_window);
 }
 void Application::destroy() {
 	m_applicationWnd.destroy();
-	for (unsigned int i = 0; i < m_windows.size(); ++i)
-		m_windows[i]->destroy();
 }
 int Application::run()
 {
@@ -31,43 +22,34 @@ int Application::run()
 
 	while (onInput(event)) {
 		update();
-		render(m_applicationWnd.m_window);
+		render();
 	}
 
 	destroy();
 	return 0;
 }
-void Application::setWindow(unsigned short index)
-{
-	if (index >= m_windows.size())
-		return;
-	if (m_activeWindow != NULL)
-		m_activeWindow->destroy();
-	m_activeWindow = m_windows[index];
-	m_activeWindow->initialize(m_applicationWnd.m_winSize[0],m_applicationWnd.m_winSize[1],m_applicationWnd.m_winName);
-}
 
 bool Application::onInput(Event & _event)
 {
-	while (m_applicationWnd.m_window.pollEvent(_event)) {
+	while (m_applicationWnd.pollEvent(_event)) {
 		switch (_event.type) {
 		case Event::Closed:
 			destroy();
 			return false;
 			break;
-		case Event::MouseButtonPressed:
-			if (Mouse::isButtonPressed(sf::Mouse::Left))
-				m_activeWindow->onMouseClick(Mouse::getPosition(m_applicationWnd.m_window).x, Mouse::getPosition(m_applicationWnd.m_window).y, 0);
-			break;
-		default:
-			return true;
+		default: {
+
+		}
+				 return true;
 		}
 	}
+	m_FSM.UpdateState(reinterpret_cast<void*>(&_event));
 	return true;
 }
 
 Application::Application()
 {
+	
 }
 
 

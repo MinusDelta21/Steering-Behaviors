@@ -1,9 +1,10 @@
 #include "stdafx.h"
 #include "Window.h"
+#include "Vector3.h"
 
-
-void Window::onMouseClick(int x, int y, short button)
+bool Window::pollEvent(Event & _event)
 {
+	return m_window.pollEvent(_event);
 }
 
 void Window::initialize(unsigned short x, unsigned short y, string winName)
@@ -12,10 +13,13 @@ void Window::initialize(unsigned short x, unsigned short y, string winName)
 	this->m_winSize[1] = y;
 	m_winName = winName;
 	m_window.create(VideoMode(m_winSize[0], m_winSize[1]), m_winName);
+	m_wndTime.init();
 }
 
 void Window::update()
 {
+	m_wndTime.update();
+
 }
 
 void Window::render(RenderWindow&window)
@@ -30,12 +34,11 @@ void Window::clear()
 
 void Window::destroy()
 {
+	m_wndTime.destroy();
 	m_window.close();
 }
 
-Window::Window()
-{
-}
+
 
 
 Window::~Window()

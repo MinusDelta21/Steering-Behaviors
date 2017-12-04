@@ -6,15 +6,13 @@ void State::onEnter()
 {
 }
 
-void State::update()
+unsigned int State::update(void * pObject)
 {
+	return 0;
 }
+
 
 void State::onExit()
-{
-}
-
-State::State()
 {
 }
 

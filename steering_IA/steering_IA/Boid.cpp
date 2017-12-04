@@ -3,19 +3,25 @@
 #include <math.h>
 #include "Vector3.h"
 #define PI					3.141592
-#define SEEK_FORCE			3
-#define FLEE_RADIUS			5
-#define ARRIVE_RADIUS		5
-#define PURSUIT_PREDICTION	3
-#define NODE_RADIUS			5
-#define VELOCITY			5
-#define BOID_VISION			5
-#define WIDTH				2
-#define SEPARATION_RADIUS	5
-#define MAX_SEPARATION		5
+#define SEEK_FORCE			30
+#define FLEE_RADIUS			50
+#define ARRIVE_RADIUS		50
+#define PURSUIT_PREDICTION	30
+#define NODE_RADIUS			50
+#define VELOCITY			50
+#define BOID_VISION			50
+#define WIDTH				20
+#define SEPARATION_RADIUS	50
+#define MAX_SEPARATION		50
 //Steering Behaviors
 Vector3 Boid::seek(int x,int y) {
 	return(Vector3(x, y) - m_position).normalized()*SEEK_FORCE;
+}
+Vector3 Boid::seekCTF()
+{
+	if (!m_targetList[TARGET::Seek])
+		return Vector3();
+	return seek(m_targetList[TARGET::Seek]->m_position.x, m_targetList[TARGET::Seek]->m_position.y);
 }
 Vector3 Boid::flee(int x, int y) {
 	if((Vector3(x,y)-m_position).magnitud() < FLEE_RADIUS)
@@ -23,6 +29,12 @@ Vector3 Boid::flee(int x, int y) {
 	else {
 		return Vector3(0, 0);
 	}
+}
+Vector3 Boid::fleeCTF()
+{
+	if (!m_targetList[TARGET::Flee])
+		return Vector3();
+	return flee(m_targetList[TARGET::Flee]->m_position.x, m_targetList[TARGET::Flee]->m_position.y);
 }
 Vector3 Boid::arrive(int x, int y) {
 	if((Vector3(x, y) - m_position).magnitud() < ARRIVE_RADIUS) {
@@ -142,12 +154,117 @@ Vector3 Boid::followLeader(vector<Boid*>&boidList) {
 	return (0, 0, 0);
 }
 
+Vector3 Boid::defendTheLeader()
+{
+	if (m_targetList[TARGET::Leader] != nullptr)
+	{
+		Boid* lead = reinterpret_cast<Boid*>(m_targetList[TARGET::Leader]);
+		return (lead->m_direction * SEEK_FORCE * 0.2f) + seek(lead->m_position.x, lead->m_position.y);
+	}
+	else
+	{
+		return Vector3();
+	}
+}
+
+void Boid::setDirection(float x, float y, float z)
+{
+	m_direction.x = x;
+	m_direction.y = y;
+	m_direction.z = z;
+	m_direction.normalize();
+}
+
+Vector3 Boid::getDirection()
+{
+	return m_direction;
+}
+
+void Boid::setVelocity(float vel)
+{
+	m_velocity = vel;
+}
+
+float Boid::getVelocity()
+{
+	return m_velocity;
+}
+
+void Boid::setWander(bool b)
+{
+	m_isWander = b;
+}
+
+Vector3 Boid::getTargetPosition(unsigned int targetIndex)
+{
+	if (targetIndex >= m_targetList.size()) {
+		return Vector3();
+	}
+	if (m_targetList[targetIndex] != nullptr)
+	{
+		return Vector3();
+	}
+	return m_targetList[targetIndex]->m_position;
+}
+
+bool Boid::addTarget(GameObject * go, unsigned int targetType, bool _deleteGO)
+{
+	if (targetType >= m_targetList.size()) {
+		return false;
+	}
+	if (_deleteGO) {
+		if (m_targetList[targetType] != nullptr)
+		{
+			delete m_targetList[targetType];
+		}
+	}
+	m_targetList[targetType] = go;
+	return true;
+}
+
+bool Boid::removeTarget(unsigned int targetType, bool _deleteGO)
+{
+	return addTarget(nullptr, targetType, _deleteGO);
+}
+
 
 void Boid::initialize() {
+	sf::FloatRect rect = m_sprite.getLocalBounds();
+	m_sprite.setOrigin(rect.width * 0.5f, rect.height * 0.5f);
 
+	if (m_targetList.size() > 0)
+	{
+		m_targetList.clear();
+	}
+	for (unsigned int i = 0; i < (TARGET::Count); ++i) {
+		GameObject* newGO = nullptr;
+		m_targetList.push_back(newGO);
+	}
 }
 void Boid::update() {
+	m_steeringForce = 0.0f;
+	m_steeringForce = seekCTF() + fleeCTF()	+ obstacleAvoidance(m_gameScene->getObjsInArea<Obstacle>(m_position.x, m_position.y, 25))
+		+ defendTheLeader();
 
+	if (m_isWander)
+	{
+		m_steeringForce = m_steeringForce +  wander();
+	}
+
+	if (std::fabsf(m_steeringForce.x) <= std::numeric_limits<float>::epsilon() &&
+		std::fabsf(m_steeringForce.y) <= std::numeric_limits<float>::epsilon())
+	{//El vector es inválido
+		return;
+	}
+
+	Vector3 steerForceDir = m_steeringForce.normalized();
+	m_direction = (m_direction + (steerForceDir * m_gameScene->m_timer.getFrameTime()));
+	m_direction.normalize();
+	m_steeringForce = m_steeringForce.truncate(m_velocity);
+	m_position += (m_direction *  m_steeringForce.magnitud() * m_gameScene->m_timer.getFrameTime());
+
+	m_sprite.setPosition(m_position.x, m_position.y);
+	m_sprite.setRotation(m_direction.rad2deg());
 }
 void Boid::render() {
 
@@ -157,9 +274,11 @@ void Boid::destroy() {
 }
 Boid::Boid()
 {
+	init();
 }
 
 
 Boid::~Boid()
 {
+	destroy();
 }

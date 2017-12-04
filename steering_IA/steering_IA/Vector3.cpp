@@ -17,6 +17,15 @@ Vector3 Vector3::normalized()
 		vc_normalized.v[i] = this->v[i] * f_mag;
 	return vc_normalized;
 }
+Vector3 Vector3::normalize()
+{
+	*this = normalized();
+	return *this;
+}
+Vector3 Vector3::truncate(const float max)
+{
+	return (this->magnitud() > max ? this->normalized() * max : *(this));
+}
 Vector3 Vector3::operator*(Vector3 & vc_vector)
 {
 	Vector3 cv_product;
@@ -53,6 +62,18 @@ void Vector3::operator=(float f_unit)
 {
 	for (int i = 0; i < 3; i++)
 		this->v[i] = f_unit;
+}
+float Vector3::rad2deg()
+{
+	if (this->x != 0 && this->y != 0)
+		return(atan2f(this->y, this->x));
+	return 0.0f;
+}
+float Vector3::deg2rad()
+{
+	if (this->x != 0.f && this->y != 0.f)
+		return (atan2f(this->y, this->x)) * 180 / 3.141592;
+	return 0.0f;
 }
 Vector3::Vector3()
 {

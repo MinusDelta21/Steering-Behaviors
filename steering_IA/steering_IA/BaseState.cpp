@@ -2,7 +2,17 @@
 #include "BaseState.h"
 
 
-BaseAgent::BaseAgent()
+
+void BaseAgent::onEnter()
+{
+}
+
+unsigned int BaseAgent::update(void * pObject)
+{
+	return 0;
+}
+
+void BaseAgent::onExit()
 {
 }
 

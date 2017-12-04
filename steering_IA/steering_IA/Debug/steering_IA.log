@@ -1,9 +1,146 @@
-﻿  App.cpp
+﻿  Window.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\mainmenu.h(7): error C2504: 'Window': base class undefined
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\app.h(15): error C2079: 'Application::m_applicationWnd' uses undefined class 'Window'
+  MainMenu.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\app.h(15): error C2079: 'Application::m_applicationWnd' uses undefined class 'Window'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\mainmenu.cpp(32): error C2512: 'Window': no appropriate default constructor available
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\window.h(18): note: see declaration of 'Window'
+  Idle.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\idle.cpp(6): error C2512: 'BaseAgent': no appropriate default constructor available
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\basestate.h(4): note: see declaration of 'BaseAgent'
+  GameWindow.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\mainmenu.h(7): error C2504: 'Window': base class undefined
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\app.h(15): error C2079: 'Application::m_applicationWnd' uses undefined class 'Window'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.h(26): error C2535: 'GameWindow::~GameWindow(void)': member function already defined or declared
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.h(25): note: see declaration of 'GameWindow::~GameWindow'
+  DefendFlag.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\defendflag.cpp(6): error C2512: 'BaseAgent': no appropriate default constructor available
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\basestate.h(4): note: see declaration of 'BaseAgent'
+  DefendCaptured.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\defendcaptured.cpp(6): error C2512: 'BaseAgent': no appropriate default constructor available
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\basestate.h(4): note: see declaration of 'BaseAgent'
+  Dead.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(15): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.h(6): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(15): error C2227: left of '->m_time' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(15): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(23): error C2039: 'flagPower': is not a member of 'Agent'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.h(8): note: see declaration of 'Agent'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(24): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.h(6): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(24): error C2227: left of '->getObjs' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(24): error C2059: syntax error: ')'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(30): error C2039: 'isEnable': is not a member of 'Flag'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\flag.h(3): note: see declaration of 'Flag'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(32): error C2039: 'setEnable': is not a member of 'Flag'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\flag.h(3): note: see declaration of 'Flag'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\dead.cpp(37): error C2039: 'setFlagPower': is not a member of 'Agent'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.h(8): note: see declaration of 'Agent'
+  Bullet.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(21): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(21): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(21): error C2227: left of '->m_time' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(21): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(26): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(26): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(33): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(33): error C2227: left of '->destroyObject' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(41): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.cpp(41): error C2227: left of '->destroyObject' must point to class/struct/union/generic type
+  Boid.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(60): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(63): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(69): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(94): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(116): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(119): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(125): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(128): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(136): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(154): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(162): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(246): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.h(29): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(246): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(261): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.h(29): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(261): error C2227: left of '->m_timer' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(261): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(264): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.h(29): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(264): error C2227: left of '->m_timer' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(264): error C2228: left of '.getFrameTime' must have class/struct/union
+  BaseState.cpp
+  Attack.cpp
+  App.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.h(26): error C2535: 'GameWindow::~GameWindow(void)': member function already defined or declared
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.h(25): note: see declaration of 'GameWindow::~GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\app.cpp(51): error C2512: 'Window': no appropriate default constructor available
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\app.h(12): note: see declaration of 'Window'
+  Agent.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(52): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(52): error C2227: left of '->getObjs' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(52): error C2059: syntax error: ')'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(93): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(93): error C2227: left of '->m_time' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(93): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(102): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(102): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(103): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(103): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(117): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(117): error C2227: left of '->m_time' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(117): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(124): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(124): error C2227: left of '->m_time' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(124): error C2228: left of '.getFrameTime' must have class/struct/union
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(131): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(131): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(138): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(138): error C2227: left of '->destroyObject' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(146): error C2065: 'm_miniFlag_Sprite': undeclared identifier
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(146): error C2228: left of '.setPosition' must have class/struct/union
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(146): note: type is 'unknown-type'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(181): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(181): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(198): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(198): error C2227: left of '->getObjsInArea' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(237): error C2027: use of undefined type 'GameWindow'
+  c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\bullet.h(3): note: see declaration of 'GameWindow'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(237): error C2227: left of '->addNewObject' must point to class/struct/union/generic type
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\agent.cpp(245): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   Generating Code...
   Compiling...
-  steering_IA.cpp
+  World.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\world.cpp(46): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  Skipping... (no relevant changes detected)
-  GameObject.cpp
-  steering_IA.vcxproj -> C:\Users\Santiago\Documents\IDV\6 Cuatrimestre\steering_IA\Debug\steering_IA.exe
-  steering_IA.vcxproj -> C:\Users\Santiago\Documents\IDV\6 Cuatrimestre\steering_IA\Debug\steering_IA.pdb (Full PDB)

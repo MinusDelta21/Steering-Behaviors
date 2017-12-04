@@ -6,15 +6,15 @@ void Flag::init()
 {
 	if (m_team == TEAM::Red)
 	{
-		this->setSprite("	spr_red_flag.png");
+		this->setSprite("Sprites/red-39392_640.png");
 	}
 	else if (m_team == TEAM::Green)
 	{
-		this->setSprite("gameResources/sprites/spr_green_flag.png");
+		this->setSprite("Sprites/Blue_flag_detail.png");
 	}
 	else
 	{
-		this->setSprite("gameResources/sprites/spr_green_flag.png");
+		this->setSprite("Sprites/Blue_flag_detail.png");
 	}
 	this->setColor(Vector3(255.f, 255.f, 255.f), 255.f);
 }

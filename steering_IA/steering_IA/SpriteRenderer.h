@@ -11,10 +11,9 @@ using std::string;
 class SpriteRenderer :
 	public GameObject
 {
-protected:
+public:
 	Sprite m_sprite;
 	Texture m_texture;
-public:
 	bool m_visible;
 	virtual void init();
 	virtual void render(RenderWindow& wnd);
