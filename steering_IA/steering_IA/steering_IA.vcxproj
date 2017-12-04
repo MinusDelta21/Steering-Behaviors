@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="Aggressive.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="BaseState.h" />
@@ -165,7 +166,6 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="MainButton.h" />
-    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="State.h" />
@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="Aggressive.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Attack.cpp" />
     <ClCompile Include="BaseState.cpp" />
@@ -191,8 +192,6 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Idle.cpp" />
-    <ClCompile Include="MainButton.cpp" />
-    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="State.cpp" />

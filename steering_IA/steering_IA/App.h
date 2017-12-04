@@ -1,6 +1,4 @@
 #pragma once
-#include "Window.h"
-#include "MainMenu.h"
 #include <vector>
 #include <SFML\Graphics.hpp>
 #include "StateMachine.h"
@@ -10,9 +8,10 @@ using sf::Event;
 using sf::Mouse;
 class StateMachine;
 class Window;
+class GameWindow;
 class Application
 {
-	Window m_applicationWnd;
+	GameWindow* m_applicationWnd;
 	StateMachine m_FSM;
 	bool onInput(Event& _event);
 public:

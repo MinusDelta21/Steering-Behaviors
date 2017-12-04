@@ -2,6 +2,7 @@
 #include "Bullet.h"
 #include "Obstacle.h"
 #include <vector>
+#include "GameWindow.h"
 using std::vector;
 
 void Bullet::init()
@@ -18,7 +19,7 @@ void Bullet::init()
 void Bullet::update()
 {
 	
-	m_position = m_position + m_direction * BULLET_SPEED * m_gmScn->m_time.getFrameTime();
+	m_position = m_position + m_direction * BULLET_SPEED * m_gmScn->m_wndTime.getFrameTime();
 	m_sprite.setPosition(m_position.x, m_position.y);
 	m_sprite.setRotation(m_direction.deg2rad());
 

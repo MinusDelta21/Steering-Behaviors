@@ -57,9 +57,6 @@
     <ClInclude Include="Window.h">
       <Filter>Header Files\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="GameWindow.h">
       <Filter>Header Files\Windows</Filter>
     </ClInclude>
@@ -111,6 +108,9 @@
     <ClInclude Include="Idle.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="Aggressive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -134,14 +134,8 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="GameWindow.cpp">
       <Filter>Source Files\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="MainButton.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Agent.cpp">
       <Filter>Source Files\GameObjects</Filter>
@@ -187,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="DefendCaptured.cpp">
       <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Aggressive.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

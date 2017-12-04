@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Dead.h"
-
+#include "GameWindow.h"
 
 
 void Dead::onEnter()
@@ -12,7 +12,7 @@ unsigned int Dead::update(void * pObject)
 {
 	m_agent->m_position = Vector3(-300, -300);
 	GameWindow* gmScn = reinterpret_cast<GameWindow*>(pObject);
-	m_time += gmScn->m_time.getFrameTime();
+	m_time += gmScn->m_wndTime.getFrameTime();
 
 	if (m_agent->m_isEnable)
 	{
@@ -20,21 +20,21 @@ unsigned int Dead::update(void * pObject)
 	}
 
 
-	if (m_agent->flagPower()) {
+	if (m_agent->m_hasFlag) {
 		vector<Flag*> flags = gmScn->getObjs<Flag>();
 
 		for (int i = 0; i < flags.size(); ++i)
 		{
 			if (flags[i]->m_team != m_agent->m_team)
 			{
-				if (!flags[i]->isEnable())
+				if (!flags[i]->m_isEnable)
 				{
-					flags[i]->setEnable(true);
+					flags[i]->m_isEnable = true;
 					break;
 				}
 			}
 		}
-		m_agent->setFlagPower(false);
+		m_agent->m_hasFlag = false;
 	}
 
 	if (m_time >= m_respawnTime)

@@ -2,7 +2,7 @@
 #include "Obstacle.h"
 
 void Obstacle::initialize() {
-	m_radius = 3;
+	init();
 }
 void Obstacle::update() {
 	m_sprite.setPosition(m_position.x, m_position.y);
@@ -24,6 +24,8 @@ void Obstacle::destroy() {
 }
 Obstacle::Obstacle()
 {
+	m_tag = "Obstacle";
+	m_radius = 70;
 	init();
 }
 

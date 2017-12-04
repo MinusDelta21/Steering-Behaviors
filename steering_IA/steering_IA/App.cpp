@@ -1,20 +1,23 @@
 #include "stdafx.h"
 #include "App.h"
 #include "GameWindow.h"
+#include "Window.h"
+
 
 
 void Application::initialize() {
-	m_applicationWnd.initialize(1920, 1080, "Capture The Flag");
-	m_FSM.AddState(reinterpret_cast<State*>(new GameWindow(SCENE_STATES::Game, "Options Scene", this),true));
+	m_applicationWnd = new GameWindow(0, "Capture The Flag II", this);
+	m_applicationWnd->init();
 }
 void Application::update() {
-	m_applicationWnd.update();
+	m_applicationWnd->update(nullptr);
 }
 void Application::render() {
-	m_applicationWnd.clear();
+	m_applicationWnd->render();
+	m_applicationWnd->clear();
 }
 void Application::destroy() {
-	m_applicationWnd.destroy();
+	m_applicationWnd->destroy();
 }
 int Application::run()
 {
@@ -31,7 +34,7 @@ int Application::run()
 
 bool Application::onInput(Event & _event)
 {
-	while (m_applicationWnd.pollEvent(_event)) {
+	while (m_applicationWnd->pollEvent(_event)) {
 		switch (_event.type) {
 		case Event::Closed:
 			destroy();

@@ -1,12 +1,16 @@
 #include "stdafx.h"
 #include "Agent.h"
 #include "Bullet.h"
+#include "GameWindow.h"
+#include "Timer.h"
 
 
-
-
-Agent::Agent(GameWindow * gmScn, unsigned int m_team)
+Agent::Agent(GameWindow * gmScn, unsigned int m_team): Boid(gmScn)
 {
+	this->m_team = m_team;
+	if(m_team == 2)	m_tag = "Red Agent";
+	else if (m_team == 1) m_tag = "Blue Agent";
+	else m_tag = m_team;
 	init();
 }
 
@@ -25,8 +29,12 @@ void Agent::init()
 	m_fsm.AddState(new CDefendBase(this));
 	m_fsm.AddState(new CAttackEnemy(this));
 	m_fsm.AddState(new CDead(this));*/
-
-	m_texture.loadFromFile("gameResources/sprites/" + static_cast<string>(m_team == TEAM::Red ? "spr_soldier_red.png" : "spr_soldier_green.png"));
+	if (m_team == TEAM::Red) {
+		m_texture.loadFromFile("Sprites/youtube.png");
+	}
+	else {
+		m_texture.loadFromFile("Sprites/facebook.png");
+	}
 	m_sprite.setTexture(m_texture, true);
 	m_sprite.setPosition(m_position.x, m_position.y);
 
@@ -80,25 +88,16 @@ void Agent::init()
 
 void Agent::update()
 {
+	m_sprite.setPosition(m_position.x, m_position.y);
 	m_fsm.UpdateState(m_gameScene);
 
-	if (!m_isEnable)
-	{
-		// NO ESTÁ ACTIVADO, SOLO DEFINIR LA POSICIÓN DEL SPRITE.
-		m_sprite.setPosition(m_position.x, m_position.y);
-		return;
-	}
+	m_shoot = m_shoot + m_gameScene->m_wndTime.getFrameTime();
 
-	// AUMENTAR EL CONTADOR DE TIEMPO;
-	m_shoot = m_shoot + m_gameScene->m_time.getFrameTime();
-
-	// CALCULO DE FUERZAS
 	m_steeringForce = 0.0f;
 	m_steeringForce = m_steeringForce + seekCTF() + fleeCTF() + defendTheLeader();
 
 	if (m_isMoving && !outOfField())
 	{
-		// SI ME ESTOY MOVIENDO, EVITAR OBSTÁCULOS Y SEPARARME DE MIS COMPAS.
 		m_steeringForce = m_steeringForce + obstacleAvoidance(m_gameScene->getObjsInArea<Obstacle>(m_position.x, m_position.y, BOID_VISION))
 			+ separation(m_gameScene->getObjsInArea<Boid>(m_position.x, m_position.y, BOID_VISION));
 	}
@@ -107,46 +106,29 @@ void Agent::update()
 		m_steeringForce = m_steeringForce + wander();
 	}
 
-	if (std::fabsf(m_steeringForce.x) <= std::numeric_limits<float>::epsilon() &&
-		std::fabsf(m_steeringForce.y) <= std::numeric_limits<float>::epsilon())
-	{//El vector es inválido
-		return;
-	}
-
 	Vector3 steerForceDir = m_steeringForce.normalized();
-	m_direction = (m_direction + (steerForceDir * m_gameScene->m_time.getFrameTime()));
+	m_direction = (m_direction + (steerForceDir * m_gameScene->m_wndTime.getFrameTime()));
 	m_direction.normalize();
 	m_steeringForce = m_steeringForce.truncate(m_velocity);
 
-	if (m_isMoving)
-	{
-		// APLICAR FUERZAS SOLO SI ESTOY EN MOVIMIENTO.
-		m_position += (m_direction *  m_steeringForce.magnitud() * m_gameScene->m_time.getFrameTime());
-	}
+	
+	m_position = m_position+(m_direction *  m_steeringForce.magnitud() * m_gameScene->m_wndTime.getFrameTime());
+	
 
 	m_sprite.setPosition(m_position.x, m_position.y);
 	m_sprite.setRotation(m_direction.rad2deg());
 
-	// REVISAR SI UNA BALA ENEMIGA ME HA GOLPEADO
 	vector<Bullet*> bulletsList = m_gameScene->getObjsInArea<Bullet>(m_position.x, m_position.y, BOID_RADIUS);
 	for (auto bullet : bulletsList)
 	{
 		if (bullet->m_team != m_team)
 		{
-			// RAYOS, ESTOY MUERTO.
 			m_fsm.SetState(BOIDSTATE::Dead);
 			m_gameScene->destroyObject(bullet);
 			break;
 		}
 	}
 
-	// SI POSEE LA BANDERA, DEFINIR POSICIÓN DEL SPRITE.
-	if (m_hasFlag)
-	{
-		m_miniFlag_Sprite.setPosition(m_position.x + (BOID_RADIUS >> 1), m_position.y - (BOID_RADIUS >> 1));
-	}
-
-	// SI EL SOLDADO ESTÁ FUERA DEL CAMPO DE BATALLA.
 	if (outOfField())
 	{
 		m_fsm.SetState(BOIDSTATE::ToField);

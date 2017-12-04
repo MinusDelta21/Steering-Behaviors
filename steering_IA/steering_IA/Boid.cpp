@@ -2,6 +2,7 @@
 #include "Boid.h"
 #include <math.h>
 #include "Vector3.h"
+#include "GameWindow.h"
 #define PI					3.141592
 #define SEEK_FORCE			30
 #define FLEE_RADIUS			50
@@ -258,10 +259,10 @@ void Boid::update() {
 	}
 
 	Vector3 steerForceDir = m_steeringForce.normalized();
-	m_direction = (m_direction + (steerForceDir * m_gameScene->m_timer.getFrameTime()));
+	m_direction = (m_direction + (steerForceDir * m_gameScene->m_wndTime.getFrameTime()));
 	m_direction.normalize();
 	m_steeringForce = m_steeringForce.truncate(m_velocity);
-	m_position += (m_direction *  m_steeringForce.magnitud() * m_gameScene->m_timer.getFrameTime());
+	m_position = m_position+(m_direction *  m_steeringForce.magnitud() * m_gameScene->m_wndTime.getFrameTime());
 
 	m_sprite.setPosition(m_position.x, m_position.y);
 	m_sprite.setRotation(m_direction.rad2deg());
@@ -272,7 +273,7 @@ void Boid::render() {
 void Boid::destroy() {
 
 }
-Boid::Boid()
+Boid::Boid(GameWindow* gmScn): m_gameScene(gmScn)
 {
 	init();
 }

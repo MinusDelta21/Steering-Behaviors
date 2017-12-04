@@ -14,7 +14,7 @@ SpriteRenderer::~SpriteRenderer()
 
 void SpriteRenderer::init()
 {
-	m_texture.loadFromFile("textures/default/spr_circle_01.png");
+	m_texture.loadFromFile("Sprites/orange-circle-md.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setColor(Color::White);
 
@@ -24,6 +24,7 @@ void SpriteRenderer::init()
 
 void SpriteRenderer::render(RenderWindow & wnd)
 {
+	RenderWindow* ptrWin = &wnd;
 	if (m_visible)
 	{
 		wnd.draw(m_sprite);
@@ -41,7 +42,7 @@ void SpriteRenderer::destroy()
 
 void SpriteRenderer::setSprite(string path)
 {
-	if (!m_texture.loadFromFile(path)) m_texture.loadFromFile("textures/default/spr_circle_01.png");
+	if (!m_texture.loadFromFile(path)) m_texture.loadFromFile("Sprites/orange-circle-md.png");
 	m_sprite.setTexture(m_texture, true);
 	sf::FloatRect rect = m_sprite.getLocalBounds();
 	m_sprite.setOrigin(rect.width * 0.5f, rect.height * 0.5f);

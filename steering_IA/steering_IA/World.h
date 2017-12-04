@@ -24,20 +24,13 @@ public:
 template<class _obj>
 inline vector<_obj*> World::getObjsInArea(int x, int y, float radius, unsigned int m_group)
 {
-	CVector3 position((float)x, (float)y);
+	Vector3 position((float)x, (float)y);
 	vector<_obj*> objectsDetected;
 
-	for (unsigned int i = 0; i < m_gameObjectList.size(); ++i) {
-		if ((position - m_gameObjectList[i]->m_position).magnitud() <= radius)
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i) {
+		if ((position - m_gameObjects[i]->m_position).magnitud() <= radius)
 		{
-			_obj* object = dynamic_cast<_obj*>(m_gameObjectList[i]);
-			if (object)
-			{
-				if (m_gameObjectList[i]->m_group == m_group || m_group == GOGROUP::kEverything)
-				{
-					objectsDetected.push_back(object);
-				}
-			}
+			_obj* object = dynamic_cast<_obj*>(m_gameObjects[i]);
 		}
 	}
 	return objectsDetected;
@@ -47,16 +40,9 @@ template<class _obj>
 inline vector<_obj*> World::getObjs(unsigned int m_group)
 {
 	vector<_obj*> objects;
-	for (unsigned int i = 0; i < m_gameObjectList.size(); ++i)
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i)
 	{
-		_obj* object = dynamic_cast<_obj*>(m_gameObjectList[i]);
-		if (object)
-		{
-			if (m_gameObjectList[i]->m_group == m_group || m_group == GOGROUP::kEverything)
-			{
-				objects.push_back(object);
-			}
-		}
+		_obj* object = dynamic_cast<_obj*>(m_gameObjects[i]);
 	}
 	return objects;
 }

@@ -32,7 +32,7 @@ public:
 
 	template<class _obj> vector<_obj*> objectsAtVisionRange();
 
-	Agent(GameWindow* gmScn, unsigned int m_team = TEAM::Green);
+	Agent(GameWindow* gmScn, unsigned int m_team = TEAM::Blue);
 	~Agent();
 };
 template<class _obj>

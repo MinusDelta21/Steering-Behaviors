@@ -1,6 +1,5 @@
 #pragma once
 #include "Window.h"
-#include "MainButton.h"
 #include <vector>
 using std::vector;
 class MainMenu: public Window

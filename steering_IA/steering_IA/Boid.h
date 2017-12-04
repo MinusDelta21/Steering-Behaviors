@@ -79,7 +79,7 @@ public:
 	void update();
 	void render();
 	void destroy();
-	Boid();
+	Boid(GameWindow* gmScn);
 	~Boid();
 };
 

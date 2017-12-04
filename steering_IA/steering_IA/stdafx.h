@@ -38,7 +38,7 @@ namespace BOIDSTATE {
 namespace TEAM {
 	enum t {
 		Undefined,
-		Green,
+		Blue,
 		Red,
 		Count
 	};

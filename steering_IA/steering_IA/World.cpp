@@ -58,12 +58,12 @@ void World::addGameObject(GameObject * newGameObject)
 	{
 		if (newGameObject->m_layer < m_gameObjects[i]->m_layer)
 		{
-			std::cout << "GO Added: "<< std::endl;
+			std::cout << "Game Object Added: "<< newGameObject->m_tag <<std::endl;
 			m_gameObjects.insert(m_gameObjects.begin() + i, newGameObject);
 			return;
 		}
 	}
-	std::cout << "GO Added: " << std::endl;
+	std::cout << "Game Object Added: " << newGameObject->m_tag << std::endl;
 	m_gameObjects.push_back(newGameObject);
 	return;
 }

@@ -23,7 +23,6 @@ public:
 
 	GameWindow(int sceneID, const std::string& title, Application* app) : Window(sceneID, title, app) {}
 	virtual ~GameWindow();
-	~GameWindow();
 };
 
 template<class _obj>

@@ -6,9 +6,9 @@ void Flag::init()
 {
 	if (m_team == TEAM::Red)
 	{
-		this->setSprite("Sprites/red-39392_640.png");
+		this->setSprite("Sprites/red_flag.png");
 	}
-	else if (m_team == TEAM::Green)
+	else if (m_team == TEAM::Blue)
 	{
 		this->setSprite("Sprites/Blue_flag_detail.png");
 	}
@@ -26,6 +26,10 @@ void Flag::render(RenderWindow & wnd)
 
 Flag::Flag(unsigned short team)
 {
+	m_team = team;
+	if (m_team == 1) m_tag = "Blue Flag";
+	else if (m_team == 2) m_tag = "Red Flag";
+	else m_tag = m_team;
 	m_radius = 10;
 	init();
 }

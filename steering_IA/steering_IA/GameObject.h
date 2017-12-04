@@ -21,9 +21,9 @@ class GameObject
 
 public:
 	Vector3 m_position;
-	bool			m_toDelete;
-	bool			m_isEnable;
-
+	bool	m_toDelete;
+	bool	m_isEnable;
+	string m_tag;
 	int				m_layer;
 	virtual void initialize();
 	virtual void update();
