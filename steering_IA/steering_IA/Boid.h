@@ -3,6 +3,14 @@
 #include <vector>
 #include "Obstacle.h"
 #include "StateMachine.h"
+#include "State.h"
+#include "Attack.h"
+#include "Dead.h"
+#include "DefendCaptured.h"
+#include "DefendFlag.h"
+#include "Idle.h"
+#include "Aggressive.h"
+#include "goToBase.h"
 using std::vector;
 using sf::RenderWindow;
 using sf::Texture;
@@ -32,6 +40,14 @@ class StateMachine;
 class State;
 class Boid : public SpriteRenderer
 {
+	friend class Attack;
+	friend class Idle;
+	friend class goToBase;
+	friend class DefendCaptured;
+	friend class DefendFlag;
+	friend class Aggresive;
+	//friend class CReturnToField;
+	friend class Dead;
 public:
 	Vector3 m_steeringForce;
 	Vector3 m_direction;

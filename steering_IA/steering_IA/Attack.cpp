@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Attack.h"
+#include "Agent.h"
 
 
 void Attack::onEnter()

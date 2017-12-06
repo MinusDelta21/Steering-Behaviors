@@ -22,143 +22,184 @@ void GameWindow::init()
 	initialize(1920, 1080, "Capture The Flag 2");
 	m_world.initialize();
 	m_wndTime.init();
-	//OBSTACLES
+	//Scene Obstacles
+
 	vector<Obstacle*> mapObstacles;
 	Obstacle* obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(75.f);
-	obs->setPosition(960, 540);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
+	// Big Obstacles
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
 	obs->setPosition(1310, 540);
-	obs->setScale(0.3f);
+	obs->setScale(0.5f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
 	obs->setPosition(610, 540);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(50.f);
-	obs->setPosition(515, 262);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(50.f);
-	obs->setPosition(515, 818);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(50.f);
-	obs->setPosition(1405, 262);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(50.f);
-	obs->setPosition(1405, 818);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(50.f);
-	obs->setPosition(960, 180);
 	obs->setScale(0.5f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
-	obs->setPosition(960, 900);
-	obs->setScale(0.5f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(890, 230);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(830, 285);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(770, 335);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(770, 735);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(1150, 335);
-	obs->setScale(0.3f);
-	m_world.addGameObject(obs);
-
-	obs = new Obstacle();
-	obs->setSprite("Sprites/orange-circle-md.png");
-	obs->setRadius(37.f);
-	obs->setPosition(1150, 735);
-	obs->setScale(0.3f);
+	obs->setPosition(960, 50);
+	obs->setScale(1.5f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
-	obs->setPosition(1665, 335);
-	obs->setScale(0.3f);
+	obs->setPosition(960, 1030);
+	obs->setScale(1.5f);
+	m_world.addGameObject(obs);
+
+	//Small Obstacles (Left Side)
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(610, 540 + (1.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+	
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(610, 540 + (2.5*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+	
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(610, 540 + (3.5f*obs->m_radius));
+	obs->setScale(0.2f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
-	obs->setPosition(1665, 735);
-	obs->setScale(0.3f);
+	obs->setPosition((610- (0.8f*obs->m_radius)), 540 + (4.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+	
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((610 - (1.8f*obs->m_radius)), 540 + (5.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+	//Top part
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(610, 540 - (1.5f*obs->m_radius));
+	obs->setScale(0.2f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
-	obs->setPosition(255, 335);
-	obs->setScale(0.3f);
+	obs->setPosition(610, 540 - (2.5*obs->m_radius));
+	obs->setScale(0.2f);
 	m_world.addGameObject(obs);
 
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);
-	obs->setPosition(255, 735);
-	obs->setScale(0.3f);
+	obs->setPosition(610, 540 - (3.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((610 - (0.8f*obs->m_radius)), 540 - (4.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((610 - (1.8f*obs->m_radius)), 540 - (5.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+
+	//Right Side
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 - (1.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 - (2.5*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 - (3.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((1310 + (0.8f*obs->m_radius)), 540 - (4.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((1310 + (1.8f*obs->m_radius)), 540 - (5.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+	//Top part
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 + (1.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 + (2.5*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition(1310, 540 + (3.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((1310 + (0.8f*obs->m_radius)), 540 + (4.5f*obs->m_radius));
+	obs->setScale(0.2f);
+	m_world.addGameObject(obs);
+
+	obs = new Obstacle();
+	obs->setSprite("Sprites/orange-circle-md.png");
+	obs->setRadius(50.f);
+	obs->setPosition((1310 + (1.8f*obs->m_radius)), 540 + (5.5f*obs->m_radius));
+	obs->setScale(0.2f);
 	m_world.addGameObject(obs);
 
 	static const int offsetField = 100;
-	//INVISIBLE OBSTACLES
+	//Obstacles in Border
 	for (int i = 0; i < 13; ++i)
 	{
 		obs = new Obstacle();
@@ -195,15 +236,15 @@ void GameWindow::init()
 		m_world.addGameObject(obs);
 	}
 
-	Flag* _newFlag = new Flag(TEAM::Red);
-	_newFlag->setPosition(200, 540);
-	_newFlag->setScale(0.2f);
-	m_world.addGameObject(_newFlag);
+	Flag* redFlag = new Flag(TEAM::Red);
+	redFlag->setPosition(200, 540);
+	redFlag->setScale(0.2f);
+	m_world.addGameObject(redFlag);
 
-	_newFlag = new Flag(TEAM::Blue);
-	_newFlag->setPosition(1720, 540);
-	_newFlag->setScale(0.3f);
-	m_world.addGameObject(_newFlag);
+	Flag* blueFlag = new Flag(TEAM::Blue);
+	blueFlag->setPosition(1720, 540);
+	blueFlag->setScale(0.3f);
+	m_world.addGameObject(blueFlag);
 
 
 	unsigned short teamSize = 5;
@@ -227,6 +268,12 @@ void GameWindow::init()
 		//Set Velocity
 		redTeam->setVelocity(100.f);
 		blueTeam->setVelocity(100.f);
+		//Set friendly Flag
+		redTeam->m_friendlyBase = redFlag;
+		blueTeam->m_friendlyBase = blueFlag;
+		//Set enemy Flag
+		redTeam->m_enemyBase = blueFlag;
+		blueTeam->m_enemyBase = redFlag;
 		//Add objects to World
 		m_world.addGameObject(redTeam);
 		m_world.addGameObject(blueTeam);

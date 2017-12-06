@@ -1,5 +1,7 @@
 #pragma once
 #include "BaseState.h"
+class BaseAgent;
+class Agent;
 class Dead : public BaseAgent
 {
 public:
@@ -9,7 +11,7 @@ public:
 	unsigned int update(void* pObject);
 	void onExit();
 
-	Dead(Agent* mySoldier);
+	Dead(Agent* mySoldier):BaseAgent(BOIDSTATE::Dead, mySoldier){}
 	~Dead();
 };
 

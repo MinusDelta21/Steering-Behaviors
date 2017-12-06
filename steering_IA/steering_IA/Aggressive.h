@@ -1,6 +1,7 @@
 #pragma once
 #include "BaseState.h"
 class Agent;
+class BaseAgent;
 class Aggressive : public BaseAgent 
 {
 public:

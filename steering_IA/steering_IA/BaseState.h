@@ -1,7 +1,7 @@
 #pragma once
 #include "State.h"
-#include "Agent.h"
-class BaseAgent:public State
+class Agent;
+class BaseAgent :public State
 {
 public:
 	Agent*	m_agent;

@@ -21,14 +21,14 @@ Agent::~Agent()
 void Agent::init()
 {
 	//MAQUINA DE ESTADOS
-	/*m_fsm.AddState(new CIdle(this));
-	m_fsm.AddState(new CAttack(this));
-	m_fsm.AddState(new CToBase(this));
-	m_fsm.AddState(new CReturnToField(this));
-	m_fsm.AddState(new CDefendLeader(this));
-	m_fsm.AddState(new CDefendBase(this));
-	m_fsm.AddState(new CAttackEnemy(this));
-	m_fsm.AddState(new CDead(this));*/
+	m_fsm.AddState(new Idle(this));
+	m_fsm.AddState(new Attack(this));
+	m_fsm.AddState(new goToBase(this));
+	//m_fsm.AddState(new ReturnToField(this));
+	m_fsm.AddState(new DefendCaptured(this));
+	m_fsm.AddState(new DefendFlag(this));
+	m_fsm.AddState(new Aggressive(this));
+	m_fsm.AddState(new Dead(this));
 	if (m_team == TEAM::Red) {
 		m_texture.loadFromFile("Sprites/youtube.png");
 	}
@@ -41,12 +41,8 @@ void Agent::init()
 	sf::FloatRect rect = m_sprite.getLocalBounds();
 	m_sprite.setOrigin(rect.width * 0.5f, rect.height * 0.5f);
 	this->setColor(Vector3(255.f, 255.f, 255.f), 255.f);
-	/*
-	m_miniFlag_texture.loadFromFile("gameResources/sprites/spr_miniFlag_01.png");
-	m_miniFlag_Sprite.setTexture(m_miniFlag_texture, true);
-	m_miniFlag_Sprite.setColor((m_team == TEAM::kRed ? Color::Green : Color::Red));*/
 
-	//PARAMETROS DE OBJETIVOS
+
 	if (m_targetList.size() > 0)
 	{
 		m_targetList.clear();
@@ -105,6 +101,8 @@ void Agent::update()
 	{
 		m_steeringForce = m_steeringForce + wander();
 	}
+	if (std::fabsf(m_steeringForce.x) <= std::numeric_limits<float>::epsilon() &&
+		std::fabsf(m_steeringForce.y) <= std::numeric_limits<float>::epsilon())return;
 
 	Vector3 steerForceDir = m_steeringForce.normalized();
 	m_direction = (m_direction + (steerForceDir * m_gameScene->m_wndTime.getFrameTime()));
@@ -131,7 +129,7 @@ void Agent::update()
 
 	if (outOfField())
 	{
-		m_fsm.SetState(BOIDSTATE::ToField);
+		m_fsm.SetState(BOIDSTATE::Return);
 	}
 }
 

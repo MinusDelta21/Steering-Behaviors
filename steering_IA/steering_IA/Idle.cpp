@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Idle.h"
+#include "Agent.h"
 
 
 void Idle::onEnter()
@@ -12,7 +13,7 @@ unsigned int Idle::update(void * pObject)
 	if (m_agent->m_hasFlag == true)
 	{
 		// OH SHIT, YO TENGO LA BANDERA VAMANOS A LA CHINGADA.
-		m_agent->m_fsm.SetState(BOIDSTATE::ToBase);
+		m_agent->m_fsm.SetState(BOIDSTATE::Base);
 		return 0;
 	}
 

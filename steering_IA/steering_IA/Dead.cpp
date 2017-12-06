@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Dead.h"
 #include "GameWindow.h"
+#include "Agent.h"
+
 
 
 void Dead::onEnter()
@@ -48,6 +50,7 @@ unsigned int Dead::update(void * pObject)
 
 void Dead::onExit()
 {
+	m_agent->m_direction = Vector3(m_agent->m_team == TEAM::Red ? 1 : -1, 0);
 }
 
 Dead::~Dead()

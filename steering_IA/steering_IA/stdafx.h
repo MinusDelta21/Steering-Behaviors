@@ -27,8 +27,8 @@ namespace BOIDSTATE {
 		Attack,
 		DefendLeader,
 		DefendBase,
-		ToBase,
-		ToField,
+		Base,
+		Return,
 		AttackEnemy,
 		Dead,
 		Count

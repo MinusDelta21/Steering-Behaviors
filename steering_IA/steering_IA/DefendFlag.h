@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseState.h"
+class Agent;
 class DefendFlag :
 	public BaseAgent
 {

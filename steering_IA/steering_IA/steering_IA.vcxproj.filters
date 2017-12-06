@@ -109,7 +109,10 @@
       <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="Aggressive.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="goToBase.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +186,10 @@
       <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="Aggressive.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="goToBase.cpp">
+      <Filter>Source Files\States</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -34,12 +34,12 @@ unsigned int Aggressive::update(void * pObject)
 		{
 			if (!enemyFlag->m_isEnable)
 			{
-				m_agent->m_fsm.SetState(BOIDSTATE::ToBase);
+				m_agent->m_fsm.SetState(BOIDSTATE::Base);
 				return 0;
 			}
 		}
 		else {
-			m_agent->m_fsm.SetState(BOIDSTATE::ToBase);
+			m_agent->m_fsm.SetState(BOIDSTATE::Base);
 			return 0;
 		}
 

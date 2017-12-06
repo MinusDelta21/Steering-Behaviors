@@ -1,3 +1,25 @@
-﻿  Aggressive.cpp
+﻿  GameWindow.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(62): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(69): warning C4244: 'argument': conversion from 'double' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(76): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(83): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(90): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(97): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(104): warning C4244: 'argument': conversion from 'double' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(111): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(118): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(125): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(134): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(141): warning C4244: 'argument': conversion from 'double' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(148): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(155): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(162): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(169): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(176): warning C4244: 'argument': conversion from 'double' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(183): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(190): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(197): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(260): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(261): warning C4305: 'argument': truncation from 'double' to 'float'
   steering_IA.vcxproj -> C:\Users\Santiago\Desktop\Artifial Intelligence\steering_IA\Debug\steering_IA.exe
   steering_IA.vcxproj -> C:\Users\Santiago\Desktop\Artifial Intelligence\steering_IA\Debug\steering_IA.pdb (Full PDB)
