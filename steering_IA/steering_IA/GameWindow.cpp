@@ -162,7 +162,7 @@ void GameWindow::init()
 	obs->setPosition((1310 + (1.8f*obs->m_radius)), 540 - (5.5f*obs->m_radius));
 	obs->setScale(0.2f);
 	m_world.addGameObject(obs);
-	//Top part
+	//Bottom part
 	obs = new Obstacle();
 	obs->setSprite("Sprites/orange-circle-md.png");
 	obs->setRadius(50.f);

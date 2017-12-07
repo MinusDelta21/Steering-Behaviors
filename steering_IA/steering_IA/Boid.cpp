@@ -4,16 +4,16 @@
 #include "Vector3.h"
 #include "GameWindow.h"
 #define PI					3.141592
-#define SEEK_FORCE			30
-#define FLEE_RADIUS			50
-#define ARRIVE_RADIUS		50
-#define PURSUIT_PREDICTION	30
-#define NODE_RADIUS			50
-#define VELOCITY			50
-#define BOID_VISION			50
-#define WIDTH				20
-#define SEPARATION_RADIUS	50
-#define MAX_SEPARATION		50
+#define SEEK_FORCE			230
+#define FLEE_RADIUS			250
+#define ARRIVE_RADIUS		250
+#define PURSUIT_PREDICTION	230
+#define NODE_RADIUS			250
+#define VELOCITY			250
+#define BOID_VISION			250
+#define WIDTH				220
+#define SEPARATION_RADIUS	250
+#define MAX_SEPARATION		250
 //Steering Behaviors
 Vector3 Boid::seek(int x,int y) {
 	return(Vector3(x, y) - m_position).normalized()*SEEK_FORCE;

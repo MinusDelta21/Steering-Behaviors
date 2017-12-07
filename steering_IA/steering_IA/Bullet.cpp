@@ -23,20 +23,18 @@ void Bullet::update()
 	m_sprite.setPosition(m_position.x, m_position.y);
 	m_sprite.setRotation(m_direction.deg2rad());
 
-	//CHECK FOR OBSTACLES
+	//Busqueda de objetos
 	vector<Obstacle*> obs = m_gmScn->getObjsInArea<Obstacle>(m_position.x, m_position.y, 200);
 	for (auto obstacle : obs)
 	{
 		Vector3 distToObs = obstacle->m_position - m_position;
 		if ((distToObs.magnitud() - (obstacle->m_radius * 0.5)) <= BULLET_RADIUS)
 		{
-			//DESTRUIR OBJETO
 			m_gmScn->destroyObject(this);
 			return;
 		}
 	}
 
-	// SI SALE DEL CAMPO DE BATALLA, MUERE.
 	if (m_position.x < 0 || m_position.x > 1920 || m_position.y < 0 || m_position.y > 1080)
 	{
 		m_gmScn->destroyObject(this);

@@ -24,7 +24,6 @@ void Agent::init()
 	m_fsm.AddState(new Idle(this));
 	m_fsm.AddState(new Attack(this));
 	m_fsm.AddState(new goToBase(this));
-	//m_fsm.AddState(new ReturnToField(this));
 	m_fsm.AddState(new DefendCaptured(this));
 	m_fsm.AddState(new DefendFlag(this));
 	m_fsm.AddState(new Aggressive(this));
@@ -65,7 +64,6 @@ void Agent::init()
 		}
 	}
 
-	// VARIOS
 	if (m_team == TEAM::Red)
 	{
 		this->setDirection(1.f, 0.f);

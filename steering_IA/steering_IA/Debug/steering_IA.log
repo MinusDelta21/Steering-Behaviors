@@ -21,5 +21,33 @@ c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewind
 c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(197): warning C4244: 'argument': conversion from 'float' to 'unsigned short', possible loss of data
 c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(260): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\gamewindow.cpp(261): warning C4305: 'argument': truncation from 'double' to 'float'
+  Boid.cpp
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(64): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(70): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(95): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(111): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(117): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(120): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(126): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(129): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(130): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(137): warning C4018: '<': signed/unsigned mismatch
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(154): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(155): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(163): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\santiago\desktop\artifial intelligence\steering_ia\steering_ia\boid.cpp(247): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   steering_IA.vcxproj -> C:\Users\Santiago\Desktop\Artifial Intelligence\steering_IA\Debug\steering_IA.exe
   steering_IA.vcxproj -> C:\Users\Santiago\Desktop\Artifial Intelligence\steering_IA\Debug\steering_IA.pdb (Full PDB)
